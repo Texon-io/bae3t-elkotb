@@ -1,6 +1,6 @@
-import shoppingIcon from "../../public/images/Shopping-bag.png"
-import menuIcon from "../../public/images/Menu.png"
-import  placeHolder from "../../public/images/product-placeholder.png"
+import shoppingIcon from "/images/Shopping-bag.png"
+import menuIcon from "/images/Menu.png"
+import  placeHolder from "/images/product-placeholder.png"
 
 
 
