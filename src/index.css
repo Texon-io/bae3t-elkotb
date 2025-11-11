@@ -14,12 +14,12 @@
   --color-main-text: #3c3635;
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
-::selection{
-    background-color: var(--color-accent-main);
-    color: var(--color-white);
+::selection {
+  background-color: var(--color-accent-main);
+  color: var(--color-white);
 }
 body {
   font-family: var(--font-tajawal);
