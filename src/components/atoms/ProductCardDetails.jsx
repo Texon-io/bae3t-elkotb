@@ -2,7 +2,7 @@ import Button from "./Button.jsx";
 
 const ProductCardDetails = ({name, description, price, stock, onAddToCart}) => {
     return (
-        <div className="card-data p-3 px-4 flex flex-col items-end gap-3 min-h-64 justify-evenly">
+        <div className="card-data p-2 px-4 pb-0 flex flex-col items-end gap-2 min-h-64 justify-evenly">
             {/* product Name */}
             <h5 className="card-name font-semibold w-full font-tajawal text-xl text-accent-dark-2 ">
                 {name}

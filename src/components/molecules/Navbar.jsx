@@ -2,15 +2,15 @@ import { useState } from "react";
 import NavIcon from "../atoms/NavIcon.jsx";
 import NavTabs from "../atoms/NavTabs.jsx";
 import { menuIcon, shoppingIcon } from "../../utils/constants.js";
-import Logo from "../atoms/Logo.jsx";
+import LogoWord from "../atoms/LogoWord.jsx";
 
 function Navbar({ openCart }) {
     const [showMenu, setShowMenu] = useState(false);
 
     return (
         <nav className="px-8 py-4 flex justify-between items-center text-accent-dark relative mb-5">
-            {/*Navbar Logo */}
-            <Logo>متجر بائعة الكتب</Logo>
+            {/*Navbar LogoWord */}
+            <LogoWord>متجر بائعة الكتب</LogoWord>
 
 
             {/* Navbar Tabs Horizontal version*/}
