@@ -18,7 +18,7 @@ function Card({ data, onAddToCart }) {
       <div className="overflow-hidden rounded-t-lg h-[250px] w-full">
         <img
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-          src={ImageURL|| tempImg}
+          src={ImageURL || tempImg}
           alt={`${Category}: ${Name}`}
         />
       </div>
