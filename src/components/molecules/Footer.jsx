@@ -1,5 +1,26 @@
+import FooterLogo from "./FooterLogo";
+import SecDivider from "../atoms/SecDivider";
+import FooterQuickLinks from "./FooterQuickLinks";
+import FooterSocials from "./FooterSocials";
+
 function Footer() {
-  return <>footer</>;
+  return (
+    <footer className=" py-4">
+      <div className=" relative max-w-6xl mx-auto p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 sm:gap-32 md:gap-20 text-sm">
+        <SecDivider pos="top-0" />
+        <FooterLogo />
+
+        <FooterQuickLinks />
+
+        <FooterSocials />
+        <SecDivider pos="bottom-0" />
+      </div>
+
+      <div className=" text-center my-4 pt-4 text-sm text-[#70453F]/70">
+        © 2025 بائعة الكتب. كل الحقوق محفوظة.
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;
