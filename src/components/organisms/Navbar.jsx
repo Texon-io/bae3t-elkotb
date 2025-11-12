@@ -3,6 +3,7 @@ import NavIcon from "../atoms/NavIcon.jsx";
 import NavTabs from "../molecules/NavTabs.jsx";
 import { menuIcon, shoppingIcon } from "../../utils/constants.js";
 import LogoWord from "../atoms/LogoWord.jsx";
+import SecDivider from "../atoms/SecDivider.jsx";
 
 function Navbar({ openCart }) {
   const [showMenu, setShowMenu] = useState(false);
@@ -33,9 +34,7 @@ function Navbar({ openCart }) {
       />
 
       {/* Navbar divider*/}
-      <div
-        className={`absolute bg-accent-dark left-8 right-8 bottom-0 h-[2px] opacity-30 rounded-xl`}
-      ></div>
+      <SecDivider pos="bottom-0" />
     </nav>
   );
 }
