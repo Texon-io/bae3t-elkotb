@@ -1,5 +1,11 @@
+import HeroSec from "../molecules/HeroSec";
+
 function HomePage() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <HeroSec />
+    </div>
+  );
 }
 
 export default HomePage;

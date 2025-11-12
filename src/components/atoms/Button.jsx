@@ -5,6 +5,7 @@ function Button({
   className = "",
   size = "md", // sm, md, or lg
   type = "button",
+  path,
   disabled,
 }) {
   // Base styles for all buttons
@@ -30,6 +31,7 @@ function Button({
       disabled={disabled}
       type={type} // button type (button, submit, reset, Link)
       onClick={onClick} // click handler
+      path={path}
       className={`${styles[variant]} ${className} ${sizes[size]}`}
     >
       {children} {/*button label/content*/}
