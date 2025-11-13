@@ -7,11 +7,13 @@
   --font-tajawal: "Tajawal", sans-serif;
 
   /* Colors */
+  --color-accent-main-light: #dec8ad;
   --color-accent-main: #ceb597;
   --color-accent-dark: #724742;
   --color-accent-dark-2: #5e3b37;
   --color-secondary: #b39a7e;
   --color-main-text: #3c3635;
+  --color-secondary-text-light: #f2dfc7;
 }
 html {
   scroll-behavior: smooth;
@@ -31,7 +33,11 @@ body {
 }
 
 .hero-sec {
-  background-image: url("/images/background.png");
+  background-color: var(--color-accent-dark-2);
+}
+#about,
+.hero-sec {
+  background-image: url("/images/background-1.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
