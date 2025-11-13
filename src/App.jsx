@@ -8,7 +8,7 @@ function App() {
     <>
       <Navbar />
 
-      <main className={`p-6 px-8 mt-20`}>
+      <main className={`p-6 px-8 mt-14`}>
         <Outlet />
       </main>
 

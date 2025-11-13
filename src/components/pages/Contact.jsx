@@ -2,10 +2,15 @@ import { Phone, Mail, Facebook } from "lucide-react";
 import LogoWord from "../atoms/LogoWord.jsx";
 import ListItem from "../atoms/ListItem.jsx";
 import { WhatsAppIcon, TiktokIcon } from "../../utils/constants.js";
+import SecHeading from "../atoms/SecHeading.jsx";
 
 function Contact() {
   return (
     <>
+
+      {/*  Section heading*/}
+        <SecHeading>تواصل معنا</SecHeading>
+
       <div className="border border-accent-dark-2/50 rounded-xl p-5 px-4 sm:px-8 bg-accent-main/10 flex flex-col gap-6">
         {/* Section title */}
         <LogoWord>معلومات التواصل</LogoWord>
