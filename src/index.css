@@ -14,7 +14,6 @@
   --color-main-text: #3c3635;
   --color-secondary-text-light: #f2dfc7;
   --color-accent-main-light: #dec8ad;
-
 }
 html {
   scroll-behavior: smooth;
@@ -31,4 +30,15 @@ body {
 
 .main-hover {
   @apply opacity-90 hover:opacity-100 transition-opacity duration-300;
+}
+
+.hero-sec {
+  background-color: var(--color-accent-dark-2);
+}
+#about,
+.hero-sec {
+  background-image: url("/images/background-1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

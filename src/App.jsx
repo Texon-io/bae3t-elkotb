@@ -8,11 +8,9 @@ function App() {
   return (
     <>
       <Navbar />
-
-      <main className={`p-6 px-8 mt-14`}>
+      <main className={``}>
         <Outlet />
       </main>
-
       <Footer />
     </>
   );
