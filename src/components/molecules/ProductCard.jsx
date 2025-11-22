@@ -4,6 +4,8 @@ import { placeHolder } from "../../utils/constants.js";
 function Card({ data, onAddToCart, showModal, setData }) {
   const tempImg = placeHolder;
 
+  console.log(data);
+
   const {
     ImageURL,
     Name = "اسم المنتج",
@@ -14,7 +16,7 @@ function Card({ data, onAddToCart, showModal, setData }) {
   } = data;
 
   return (
-    <div className="rounded-lg min-w-[350px] sm:min-w-72 bg-accent-main/25 min-h-[420px] shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+    <div className="rounded-lg min-w-full bg-accent-main/25 min-h-[420px] shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
       <div
         className="overflow-hidden rounded-t-lg min-w-[300px] min-h-[250px] w-full cursor-pointer"
         onClick={() => {
@@ -23,7 +25,7 @@ function Card({ data, onAddToCart, showModal, setData }) {
         }}
       >
         <img
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          className="w-full h-[305px] object-cover transition-transform duration-500 hover:scale-105"
           src={ImageURL || tempImg}
           alt={`${Category}: ${Name}`}
         />

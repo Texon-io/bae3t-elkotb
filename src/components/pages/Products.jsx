@@ -1,9 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
-import { getData } from "../../api/products.js";
 
 import LogoWord from "../atoms/LogoWord.jsx";
 import CategoriesList from "../molecules/CategoriesList.jsx";
@@ -12,6 +9,7 @@ import PaginationBar from "../molecules/PaginationBar.jsx";
 import Error from "../atoms/Error.jsx";
 import Product from "../organisms/Product.jsx";
 import { AnimatePresence } from "framer-motion";
+import useProducts from "../../hooks/useProducts.js";
 
 function Products() {
   const [showProductModal, setShowProductModal] = useState(false);
@@ -26,14 +24,7 @@ function Products() {
     isLoading,
     isError,
     error,
-  } = useQuery({
-    queryKey: ["products"],
-    queryFn: getData,
-    staleTime: 1000 * 20,
-    refetchInterval: 20000,
-    refetchIntervalInBackground: false,
-    retry: 2,
-  });
+  } = useProducts();
 
   const categories = ["الكل", ...new Set(products.map((p) => p.Category))]; // Applying categories dynamically from Google Sheets
 
