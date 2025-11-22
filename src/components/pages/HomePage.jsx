@@ -1,10 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
-import { getData } from "../../api/products.js";
-
 import AboutSec from "../organisms/AboutSec";
 import CategoriesSec from "../organisms/CategoriesSec";
 import HeroSec from "../organisms/HeroSec";
 import QuoteSec from "../organisms/QuoteSec";
+import useProducts from "../../hooks/useProducts.js";
 
 function HomePage() {
   // variable to store bestseller products
@@ -15,13 +13,7 @@ function HomePage() {
     data: products,
     isSuccess,
     error,
-  } = useQuery({
-    queryKey: ["products"],
-    queryFn: getData,
-    staleTime: 1000 * 60,
-    refetchInterval: 20000,
-    refetchIntervalInBackground: false,
-  });
+  } = useProducts();
 
   // on success assigning first 3 bestsellers products in variable
   if (isSuccess) {
