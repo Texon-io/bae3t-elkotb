@@ -7,8 +7,6 @@ function Card({ data, showModal, setData }) {
   const { addToCart } = useCart();
   const tempImg = placeHolder;
 
-  console.log(data);
-
   const {
     ImageURL,
     Name = "اسم المنتج",
