@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 
 import Button from "../atoms/Button.jsx";
 import { placeHolder } from "../../utils/constants.js";
+import {useCart} from "../../hooks/useCart.jsx";
 
 function Product({ showModal, data }) {
-  const { ImageURL, Name, Description, Price, Stock } = data;
+  const { ImageURL:image, Name:name, Description:desc, Price:price, Stock:stock, id } = data;
+  const {addToCart} = useCart();
   const tempImg = placeHolder;
 
   function handleCloseModal(e) {
@@ -33,15 +35,15 @@ function Product({ showModal, data }) {
           <div
             className={`flex flex-col justify-start items-start gap-10 pt-10 h-full`}
           >
-            <h5 className={`text-accent-dark text-4xl font-reqaa`}>{Name}</h5>
-            <p className={`text-xl tracking-wide leading-8`}>{Description}</p>
+            <h5 className={`text-accent-dark text-4xl font-reqaa`}>{name}</h5>
+            <p className={`text-xl tracking-wide leading-8`}>{desc}</p>
             <div
               className={`text-accent-dark flex justify-between items-center mt-auto w-full`}
             >
-              <span className={`text-2xl font-semibold`}>{Price} ج.م</span>
-              <span>الكمية: {Stock}</span>
+              <span className={`text-2xl font-semibold`}>{price} ج.م</span>
+              <span>الكمية: {stock}</span>
             </div>
-            <Button className={`w-full `}>أضف إلى السلة</Button>
+            <Button onClick={() => addToCart({ name, price, image, id })} className={`w-full `}>أضف إلى السلة</Button>
           </div>
         </div>
         <div className={`w-1/2 rounded-l-2xl p-8 bg-accent-main/50 h-full flex justify-center items-center`}>
@@ -49,8 +51,8 @@ function Product({ showModal, data }) {
             className={`w-full h-5/6 flex justify-center items-center object-contain`}
           >
             <img
-              src={`${ImageURL || tempImg}`}
-              alt={Name}
+              src={`${image || tempImg}`}
+              alt={name}
               className={`w-5/6 h-5/6 rounded-xl shadow-lg`}
             />
           </div>

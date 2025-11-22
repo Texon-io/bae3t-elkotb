@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 
 function CategoryCard({ imgPath, to, children }) {
-  console.log(imgPath);
   return (
     <div
       id="card"
