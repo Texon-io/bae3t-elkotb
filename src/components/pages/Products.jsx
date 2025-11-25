@@ -10,6 +10,7 @@ import Error from "../atoms/Error.jsx";
 import Product from "../organisms/Product.jsx";
 import { AnimatePresence } from "framer-motion";
 import useProducts from "../../hooks/useProducts.js";
+import { Outlet } from "react-router";
 
 function Products() {
   const [showProductModal, setShowProductModal] = useState(false);
@@ -63,6 +64,9 @@ function Products() {
             />
           )}
         </div>
+
+        {/* ====> Must be the categoryList after filter */}
+        <Outlet />
 
         {/* Products List */}
         <div className="products-list grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
