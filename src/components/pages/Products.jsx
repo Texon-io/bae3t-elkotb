@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react"; // أضفنا useMemo
+import {  useState, useEffect, useMemo } from "react"; // أضفنا useMemo
 import { useSearchParams } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -14,6 +14,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import useProducts from "../../hooks/useProducts.js";
 import useAllProducts from "../../hooks/useAllProducts.js";
+import { lazy } from "react";
 
 const ALL_CATEGORIES = [
   "دفاتر",

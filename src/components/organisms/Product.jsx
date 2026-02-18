@@ -3,22 +3,29 @@ import { useState } from "react"; // استيراد useState لتغيير الص
 import Button from "../atoms/Button.jsx";
 import { placeHolder } from "../../utils/constants.js";
 import { useCart } from "../../hooks/useCart.jsx";
+import { useEffect } from "react";
 
 function Product({ showModal, data }) {
-  const { main_image, name, description, price, stock, id, additional_images } = data;
+  // 1. استدعاء الـ Hook الخاص بالسلة (دائماً في البداية)
   const { addToCart } = useCart();
+
+  // 2. الـ State لازم تكون فوق، وبنستخدم data?.main_image عشان لو الـ data لسه مجاتش الكود ميوقفش
+  const [activeImg, setActiveImg] = useState(data?.main_image || placeHolder);
+
+  // 3. سطر الحماية: لو مفيش بيانات، اخرج "بعد" استدعاء الـ Hooks
+  if (!data || Object.keys(data).length === 0) return null;
+
+  // 4. استخراج البيانات (Destructuring) - الترتيب هنا آمن لأننا عدينا سطر الحماية
+  const { main_image, name, description, price, stock, id, additional_images } = data;
   const tempImg = placeHolder;
 
-  // State للتحكم في الصورة المعروضة حالياً
-  const [activeImg, setActiveImg] = useState(main_image || tempImg);
-
+  // 5. دالة إغلاق المودال
   function handleCloseModal(e) {
     if (e.target === e.currentTarget) showModal(false);
   }
 
-  // تجميع كل الصور في مصفوفة واحدة للعرض
+  // 6. تجميع الصور
   const allImages = [main_image, ...(additional_images || [])].filter(Boolean);
-
   return (
     <div
       onClick={handleCloseModal}
